@@ -1,0 +1,52 @@
+[
+    {
+        "DataCriacao": "/Date(1714521600000)/",
+        "CriadoPor": "leonardo.silva",
+        "ClienteId": 100245,
+        "TotalItens": 1250.50,
+        "TotalFrete": 45.90,
+        "TotalOrdem": 1296.40,
+        "Status": "1",
+        "OrdemId": 500001
+    },
+    {
+        "DataCriacao": "/Date(1714608000000)/",
+        "CriadoPor": "ana.costa",
+        "ClienteId": 100312,
+        "TotalItens": 890.00,
+        "TotalFrete": 32.50,
+        "TotalOrdem": 922.50,
+        "Status": "2",
+        "OrdemId": 500002
+    },
+    {
+        "DataCriacao": "/Date(1714694400000)/",
+        "CriadoPor": "carlos.mendes",
+        "ClienteId": 100178,
+        "TotalItens": 2450.75,
+        "TotalFrete": 60.00,
+        "TotalOrdem": 2510.75,
+        "Status": "3",
+        "OrdemId": 500003
+    },
+    {
+        "DataCriacao": "/Date(1714780800000)/",
+        "CriadoPor": "juliana.rocha",
+        "ClienteId": 100421,
+        "TotalItens": 320.00,
+        "TotalFrete": 20.00,
+        "TotalOrdem": 340.00,
+        "Status": "1",
+        "OrdemId": 500004
+    },
+    {
+        "DataCriacao": "/Date(1714867200000)/",
+        "CriadoPor": "rafael.almeida",
+        "ClienteId": 100509,
+        "TotalItens": 1780.90,
+        "TotalFrete": 55.30,
+        "TotalOrdem": 1836.20,
+        "Status": "2",
+        "OrdemId": 500005
+    }
+]
