@@ -1,73 +1,80 @@
 <mvc:View controllerName="zov.controller.View1"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
-    xmlns:t="sap.ui.table"
-    xmlns:l="sap.ui.layout"
-	xmlns:f="sap.ui.layout.form"
-	xmlns:core="sap.ui.core">
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core">
 
-    <Page id="page" title="{i18n>title}" showHeader="true">
+    <Page title="Calculadora de Média">
 
         <VBox class="sapUiSmallMargin">
-            <f:Form id="FormChange354"
-                editable="true">
+            <f:Form id="formCalculadora" editable="true">
+
                 <f:title>
-                    <core:Title text="Calculadora" />
+                    <core:Title text="Notas"/>
                 </f:title>
+
                 <f:layout>
-                    <f:ResponsiveGridLayout
-                        labelSpanXL="3"
-                        labelSpanL="3"
-                        labelSpanM="3"
-                        labelSpanS="12"
-                        adjustLabelSpan="false"
-                        emptySpanXL="4"
-                        emptySpanL="4"
-                        emptySpanM="4"
-                        emptySpanS="0"
-                        columnsXL="1"
-                        columnsL="1"
-                        columnsM="1"
-                        singleContainerFullSize="false" />
+                    <f:ResponsiveGridLayout/>
                 </f:layout>
+
                 <f:formContainers>
                     <f:FormContainer>
                         <f:formElements>
+
                             <f:FormElement label="1° Bimestre">
                                 <f:fields>
-                                    <Input value="" id="b1"/>
+                                    <Input id="b1" type="Number"/>
                                 </f:fields>
                             </f:FormElement>
+
                             <f:FormElement label="2° Bimestre">
                                 <f:fields>
-                                    <Input value="" id="b2"/>
+                                    <Input id="b2" type="Number"/>
                                 </f:fields>
                             </f:FormElement>
+
                             <f:FormElement label="3° Bimestre">
                                 <f:fields>
-                                    <Input value="" id="b3"/>
+                                    <Input id="b3" type="Number"/>
                                 </f:fields>
                             </f:FormElement>
+
                             <f:FormElement label="4° Bimestre">
                                 <f:fields>
-                                    <Input value="" id="b4"/>
+                                    <Input id="b4" type="Number"/>
                                 </f:fields>
                             </f:FormElement>
+
                             <f:FormElement label="Resultado">
                                 <f:fields>
-                                    <Input value="" id="resultado" editable="false"/>
+                                    <Input id="resultado" editable="false"/>
                                 </f:fields>
                             </f:FormElement>
+
+                            <f:FormElement>
+                                <f:fields>
+                                    <Button text="Calcular" press="onCalc" type="Emphasized"/>
+                                    <Button text="Limpar" press="onClick" type="Reject"/>
+                                </f:fields>
+                            </f:FormElement>
+
                             <f:FormElement label="">
                                 <f:fields>
-                                    <Button text="Calcular" press="onCalc"></Button>
+                                    <ObjectStatus
+							        class="sapUiSmallMarginBottom"
+                                    id="status"
+                                    inverted="true"
+							        text=""
+                                    visible="false"
+							        state="None" />
                                 </f:fields>
                             </f:FormElement>
+
                         </f:formElements>
                     </f:FormContainer>
                 </f:formContainers>
             </f:Form>
         </VBox>
-        
+
     </Page>
 </mvc:View>

@@ -1,42 +1,58 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/m/MessageToast"
-], (Controller,MessageToast) => {
+], function (Controller, MessageToast) {
     "use strict";
 
     return Controller.extend("zov.controller.View1", {
-        onInit() {
+
+        onInit: function () {
         },
-        
-        onCalc: function(oEvt){
-            const oView = this.getView()
 
-            const iB1 = parseInt(oView.byId("b1").getValue())
-            const iB2 = parseInt(oView.byId("b2").getValue())
-            const iB3 = parseInt(oView.byId("b3").getValue())
-            const iB4 = parseInt(oView.byId("b4").getValue())
+        onClick: function () {
+            const oView = this.getView();
 
-            let fResultado = 0 
+            ["b1", "b2", "b3", "b4", "resultado"].forEach(id => {
+                oView.byId(id).setValue("");
+            });
 
-            fResultado = (iB1 + iB2 + iB3 + iB4) / 4
+            const oStatus = oView.byId("status");
+            oStatus.setVisible(false);
+            oStatus.setText("");
+            oStatus.setState("None");
+        },
 
-            oView.byId("resultado").setValue(fResultado)
+        onCalc: function () {
+            const oView = this.getView();
 
-            if(isNaN(oView.byId("resultado").getValue())) {
-                oView.byId("resultado").setValue("")
-                
-                oView.byId("b1").setValue("")
-                oView.byId("b2").setValue("")
-                oView.byId("b3").setValue("")
-                oView.byId("b4").setValue("")
+            const iB1 = parseFloat(oView.byId("b1").getValue());
+            const iB2 = parseFloat(oView.byId("b2").getValue());
+            const iB3 = parseFloat(oView.byId("b3").getValue());
+            const iB4 = parseFloat(oView.byId("b4").getValue());
 
-                MessageToast.show(`Preencha todas as notas corretamente!`)
-            } else {
-                MessageToast.show(`Resultado ${fResultado}`)
+            if (isNaN(iB1) || isNaN(iB2) || isNaN(iB3) || isNaN(iB4)) {
+                MessageToast.show("Preencha todas as notas corretamente!");
+                return;
             }
-            
-            
 
+            const fResultado = (iB1 + iB2 + iB3 + iB4) / 4;
+
+            oView.byId("resultado").setValue(fResultado.toFixed(2));
+
+            MessageToast.show("Resultado: " + fResultado.toFixed(2));
+
+            const status = this.getView().byId("status");
+
+            status.setVisible(true)
+
+            if (fResultado >= 6) {
+                status.setText("Aprovado");
+                status.setState("Success");
+            } else {
+                status.setText("Reprovad");
+                status.setState("Error");
+            }
         }
+
     });
 });
